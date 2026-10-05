@@ -1,0 +1,624 @@
+/* =========================================
+   1. ETİKET (TAG) VE ÇOKLU (MULTIPLE) SEÇİCİLER 
+   ========================================= */
+/* Bütün h1, h2 ve h3 etiketlerinin marginlerini sıfırlarız (Çoklu Seçici) */
+h1, h2, h3 {
+    margin: 0;
+    font-family: 'Arial Black', sans-serif;
+}
+
+/* Doğrudan body etiketini hedef alırız (Etiket Seçici) */
+body {
+    position: relative;
+    background:
+        linear-gradient(rgba(4, 8, 20, 0.75), rgba(4, 8, 20, 0.85)),
+        url('gorseller/saman_yolu_galaksisi.jpg') center center / cover no-repeat fixed;
+    color: #c5c6c7; /* Okunabilir açık gri */
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+}
+
+main {
+    min-height: calc(100vh - 170px);
+}
+
+.karsilama-alani {
+    padding: 40px 30px 20px;
+    background: rgba(10, 16, 26, 0.18);
+    border-top: 1px solid rgba(102, 252, 241, 0.2);
+    border-bottom: 1px solid rgba(102, 252, 241, 0.2);
+}
+
+.karsilama-alani {
+    padding: 50px 30px 40px;
+    position: relative;
+    min-height: 420px;
+}
+
+.karsilama-alani::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(102, 252, 241, 0.06), transparent 48%);
+    pointer-events: none;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image:
+        radial-gradient(2px 2px at 10% 20%, rgba(255,255,255,0.9) 0, transparent 100%),
+        radial-gradient(1.5px 1.5px at 25% 35%, rgba(255,255,255,0.8) 0, transparent 100%),
+        radial-gradient(2px 2px at 35% 75%, rgba(255,255,255,0.8) 0, transparent 100%),
+        radial-gradient(2px 2px at 60% 30%, rgba(255,255,255,0.9) 0, transparent 100%),
+        radial-gradient(1.5px 1.5px at 80% 55%, rgba(255,255,255,0.8) 0, transparent 100%),
+        radial-gradient(1.8px 1.8px at 90% 15%, rgba(255,255,255,0.9) 0, transparent 100%);
+    opacity: 0.9;
+    pointer-events: none;
+    z-index: 0;
+}
+
+main,
+header,
+footer {
+    position: relative;
+    z-index: 1;
+}
+
+/* =========================================
+   2. KİMLİK (ID) SEÇİCİLER (#)
+   Sayfada SADECE 1 TANE olan elemanlar içindir.
+   ========================================= */
+#logo {
+    color: #63e6ff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-weight: 900;
+    text-shadow: 0 0 14px rgba(99, 230, 255, 0.4);
+}
+
+/* =========================================
+   3. SINIF (CLASS) SEÇİCİLER (.)
+   Birden fazla elemana aynı stili vermek içindir.
+   ========================================= */
+header {
+    background: rgba(4, 12, 20, 0.96);
+    padding: 22px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid rgba(255, 0, 153, 0.9);
+    box-shadow: 0 0 18px rgba(255, 0, 153, 0.12);
+}
+
+.karsilama-alani h2 {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+    color: #dfe7ee;
+}
+
+.karsilama-alani p {
+    font-size: 1.1rem;
+}
+
+.hikaye-metni {
+    font-size: 1.2rem;
+    max-width: 980px;
+}
+
+nav a {
+    color: #c5c6c7;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.aktif-link {
+    color: #66fcf1;
+    border-bottom: 2px solid #66fcf1;
+}
+
+/* =========================================
+   4. SÖZDE SINIF (PSEUDO-CLASS) SEÇİCİLER (:)
+   Kullanıcı etkileşimlerini (fare ile üzerine gelme vb.) yakalar.
+   ========================================= */
+nav a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px #66fcf1; /* Üzerine gelince neon parlasın */
+}
+
+/* Düğme Tasarımı */
+.neon-buton,
+.secondary-button {
+    display: inline-block;
+    background-color: transparent;
+    color: #66fcf1;
+    border: 2px solid #66fcf1;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.secondary-button {
+    color: #dfe7ee;
+    border-color: rgba(102, 252, 241, 0.5);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.hero-actions,
+.iletisim-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.uyari-metin {
+    color: #ffb703;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+.section-baslik-wrap {
+    margin-bottom: 28px;
+}
+
+.mini-baslik {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #66fcf1;
+    margin-bottom: 10px;
+}
+
+.yorumlar-bolumu,
+.populer-gezenler-bolumu,
+.iade-politikasi {
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding: 0 24px 32px;
+}
+
+.yorum-kartlari,
+.populer-gezenler-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.yorum-karti,
+.populer-gezen,
+.iade-politikasi {
+    background: rgba(20, 27, 38, 0.9);
+    border: 1px solid rgba(148, 163, 184, 0.24);
+    border-radius: 16px;
+    padding: 22px 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
+}
+
+.yorum-karti p {
+    color: #dfe7ee;
+    margin: 16px 0;
+    line-height: 1.7;
+}
+
+.yorum-karti strong,
+.populer-gezen h4 {
+    color: #7fe8ff;
+}
+
+.yorum-karti span {
+    display: block;
+    margin-top: 6px;
+    color: #a9c7d6;
+    font-size: 0.82rem;
+}
+
+.yorum-yildiz {
+    color: #ffd166;
+    letter-spacing: 0.15em;
+    font-size: 0.9rem;
+}
+
+.populer-gezen {
+    position: relative;
+}
+
+.gezen-badge {
+    display: inline-block;
+    background: rgba(99, 230, 255, 0.08);
+    border: 1px solid rgba(99, 230, 255, 0.35);
+    color: #7fe8ff;
+    border-radius: 999px;
+    padding: 5px 12px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.populer-gezen p,
+.iade-politikasi p {
+    color: #dfe7ee;
+    line-height: 1.7;
+}
+
+.iade-politikasi {
+    margin-bottom: 30px;
+}
+
+.neon-buton:hover,
+.secondary-button:hover {
+    background-color: #66fcf1;
+    color: #0b0c10;
+    box-shadow: 0 0 15px #66fcf1, 0 0 30px #66fcf1;
+}
+
+.gezegen-karti[data-tur="Mars"] {
+    --planet-color: #ff6b57;
+    --planet-soft: rgba(255, 107, 87, 0.16);
+    --planet-border: rgba(255, 107, 87, 0.45);
+}
+
+.gezegen-karti[data-tur="Uranüs"] {
+    --planet-color: #7ce8ff;
+    --planet-soft: rgba(124, 232, 255, 0.16);
+    --planet-border: rgba(124, 232, 255, 0.45);
+}
+
+.gezegen-karti[data-tur="Satürn"] {
+    --planet-color: #f4d35e;
+    --planet-soft: rgba(244, 211, 94, 0.16);
+    --planet-border: rgba(244, 211, 94, 0.45);
+}
+
+.gezegen-karti[data-tur="Dünya"] {
+    --planet-color: #4ad3b5;
+    --planet-soft: rgba(74, 211, 181, 0.16);
+    --planet-border: rgba(74, 211, 181, 0.45);
+}
+
+.gezegen-karti[data-tur="Jüpiter"] {
+    --planet-color: #ffbf69;
+    --planet-soft: rgba(255, 191, 105, 0.16);
+    --planet-border: rgba(255, 191, 105, 0.45);
+}
+
+.gezegen-karti[data-tur="Merkür"] {
+    --planet-color: #d9d9d9;
+    --planet-soft: rgba(217, 217, 217, 0.14);
+    --planet-border: rgba(217, 217, 217, 0.4);
+}
+
+.gezegen-karti[data-tur="Neptün"] {
+    --planet-color: #5ca8ff;
+    --planet-soft: rgba(92, 168, 255, 0.16);
+    --planet-border: rgba(92, 168, 255, 0.45);
+}
+
+.gezegen-karti[data-tur="Venüs"] {
+    --planet-color: #ff9edb;
+    --planet-soft: rgba(255, 158, 219, 0.16);
+    --planet-border: rgba(255, 158, 219, 0.45);
+}
+
+.gezegen-karti {
+    --planet-color: #66fcf1;
+    --planet-soft: rgba(102, 252, 241, 0.1);
+    --planet-border: rgba(102, 252, 241, 0.35);
+    border: 1px solid var(--planet-border);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18), 0 0 18px var(--planet-soft);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.gezegen-karti:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 0 22px var(--planet-soft);
+}
+
+.gezegen-karti.is-open {
+    border-color: var(--planet-color);
+    box-shadow: 0 18px 32px rgba(0, 0, 0, 0.25), 0 0 26px var(--planet-soft);
+}
+
+.gezegen-karti h3 {
+    color: var(--planet-color);
+}
+
+.fiyat-listesi {
+    margin: 12px 0 0;
+    color: #f1f5f9;
+    font-size: 0.95rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.fiyat-listesi span {
+    background: var(--planet-soft);
+    border: 1px solid var(--planet-border);
+    border-radius: 999px;
+    padding: 5px 10px;
+}
+
+.bilet-secimi {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 14px;
+    font-size: 0.85rem;
+    color: #dfe7ee;
+}
+
+.bilet-secimi label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--planet-border);
+    border-radius: 999px;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.bilet-secimi input {
+    accent-color: var(--planet-color);
+}
+
+.gezegen-karti .neon-buton {
+    color: var(--planet-color);
+    border-color: var(--planet-color);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+}
+
+.gezegen-karti .neon-buton:hover {
+    background-color: var(--planet-color);
+    color: #0b0c10;
+    box-shadow: 0 0 15px var(--planet-color), 0 0 30px var(--planet-color);
+}
+
+.sefer-secimi {
+    width: 100%;
+    margin-top: 12px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--planet-border);
+    background: rgba(255, 255, 255, 0.03);
+    color: #dfe7ee;
+    font: inherit;
+    box-shadow: inset 0 0 12px var(--planet-soft);
+}
+
+.sefer-secimi option {
+    background: #1f2833;
+    color: #dfe7ee;
+}
+
+.sefer-secimi-kutusu,
+.tur-detay,
+.bilet-secimi,
+.bilet-al-btn {
+    display: none;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.gezegen-karti.is-open .sefer-secimi-kutusu,
+.gezegen-karti.is-open .tur-detay,
+.gezegen-karti.is-open .bilet-secimi,
+.gezegen-karti.is-open .bilet-al-btn {
+    display: block;
+    max-height: 300px;
+    opacity: 1;
+}
+
+.bilet-al-btn {
+    margin-top: 12px;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.tur-detay {
+    margin-top: 12px;
+    font-size: 0.82rem;
+    color: #dfe7ee;
+    line-height: 1.6;
+}
+
+.neon-buton:hover,
+.secondary-button:hover {
+    background-color: #66fcf1;
+    color: #0b0c10;
+    box-shadow: 0 0 15px #66fcf1, 0 0 30px #66fcf1; /* İki kat neon parlama */
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 16px;
+    }
+
+    nav a {
+        margin-left: 0;
+        font-size: 0.95rem;
+    }
+
+    #logo {
+        font-size: 2.2rem;
+        letter-spacing: 2px;
+    }
+
+    .karsilama-alani {
+        padding: 28px 18px 24px;
+        min-height: auto;
+    }
+
+    .karsilama-alani h2 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .hikaye-metni {
+        font-size: 1rem;
+    }
+
+    .hero-actions,
+    .iletisim-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .neon-buton,
+    .secondary-button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .yorum-kartlari,
+    .populer-gezenler-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .yorumlar-bolumu,
+    .populer-gezenler-bolumu,
+    .iade-politikasi {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+/* =========================================
+   5. ÇOCUK (CHILD) VE TORUN (DESCENDANT) SEÇİCİLER
+   ========================================= */
+
+/* Ana Kapsayıcı Ayarı */
+.galeri-kapsayici {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+    gap: 20px;
+    perspective: 1200px;
+}
+
+.gezegen-karti {
+    position: relative;
+    background-color: #1f2833;
+    border-radius: 10px;
+    width: 30%;
+    overflow: hidden;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    transform-style: preserve-3d;
+    border: 1px solid rgba(102, 252, 241, 0.18);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+.gezegen-karti::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(102, 252, 241, 0.18), transparent 45%, rgba(255, 255, 255, 0.08));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.gezegen-karti:hover {
+    transform: rotateX(8deg) rotateY(-8deg) translateY(-12px) scale(1.02);
+    box-shadow: 0 25px 35px rgba(102, 252, 241, 0.18), 0 0 25px rgba(102, 252, 241, 0.12);
+    border-color: rgba(102, 252, 241, 0.45);
+}
+
+.gezegen-karti:hover::before {
+    opacity: 1;
+}
+
+.gezegen-karti img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    transform: translateZ(16px);
+    transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.gezegen-karti:hover img {
+    transform: translateZ(30px) scale(1.03);
+    filter: saturate(1.2) contrast(1.06);
+}
+
+.kart-icerik {
+    padding: 20px;
+    text-align: center;
+    transform: translateZ(18px);
+    transition: transform 0.35s ease;
+}
+
+.gezegen-karti:hover .kart-icerik {
+    transform: translateZ(28px);
+}
+
+/* ÇOCUK SEÇİCİ (> işareti ile yazılır): 
+   .kart-icerik class'ının DOĞRUDAN altındaki h3'ü bul! */
+.kart-icerik > h3 {
+    color: #45a29e;
+    margin-bottom: 10px;
+}
+
+.kart-icerik {
+    padding: 20px;
+    text-align: center;
+}
+
+/* =========================================
+   6. SÖZDE ELEMAN (PSEUDO-ELEMENT) SEÇİCİLER (::)
+   Elemanların belirli bir kısmını (ilk harf, seçili alan) hedef alır.
+   ========================================= */
+
+/* p etiketlerinin ilk harfini kitaplardaki gibi devasa yapar */
+.hikaye-metni::first-letter {
+    font-size: 50px;
+    font-weight: bold;
+    color: #66fcf1;
+    float: left;
+    line-height: 1;
+    margin-right: 8px;
+}
+
+/* Fare ile sitedeki bir metni seçtiğimizde arkaplan rengini değiştirir */
+::selection {
+    background-color: #66fcf1;
+    color: #0b0c10;
+}
+
+/* Footer Ayarı */
+footer {
+    text-align: center;
+    padding: 18px 20px;
+    background-color: #1f2833;
+    border-top: 1px solid #45a29e;
+    margin-top: 0;
+    color: #dfe7ee;
+}

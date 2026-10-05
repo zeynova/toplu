@@ -1,0 +1,115 @@
+```html
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sayı Tahmin Oyunu</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .oyun {
+            background-color: white;
+            width: 350px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px #aaa;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        input {
+            padding: 10px;
+            width: 100px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 8px;
+            cursor: pointer;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #217dbb;
+        }
+
+        #sonuc {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="oyun">
+        <h1>🎯 Sayı Tahmin Oyunu</h1>
+        <p>1 ile 100 arasında bir sayı tuttum.</p>
+        <p>Sayıyı tahmin etmeye çalış!</p>
+
+        <input type="number" id="tahmin" min="1" max="100">
+        <br>
+
+        <button onclick="tahminEt()">Tahmin Et</button>
+        <button onclick="yeniOyun()">Yeni Oyun</button>
+
+        <p id="sonuc"></p>
+        <p id="hak"></p>
+    </div>
+
+    <script>
+        let tutulanSayi = Math.floor(Math.random() * 100) + 1;
+        let denemeSayisi = 0;
+
+        function tahminEt() {
+            let tahmin = Number(document.getElementById("tahmin").value);
+            let sonuc = document.getElementById("sonuc");
+            let hak = document.getElementById("hak");
+
+            if (tahmin < 1 || tahmin > 100 || tahmin === 0) {
+                sonuc.innerHTML = "Lütfen 1 ile 100 arasında bir sayı giriniz!";
+                return;
+            }
+
+            denemeSayisi++;
+
+            if (tahmin === tutulanSayi) {
+                sonuc.innerHTML = "🎉 Tebrikler! Doğru tahmin ettiniz!";
+                hak.innerHTML = denemeSayisi + " denemede bildiniz.";
+            } 
+            else if (tahmin < tutulanSayi) {
+                sonuc.innerHTML = "Daha büyük bir sayı deneyin.";
+                hak.innerHTML = "Deneme sayısı: " + denemeSayisi;
+            } 
+            else {
+                sonuc.innerHTML = "Daha küçük bir sayı deneyin.";
+                hak.innerHTML = "Deneme sayısı: " + denemeSayisi;
+            }
+        }
+
+        function yeniOyun() {
+            tutulanSayi = Math.floor(Math.random() * 100) + 1;
+            denemeSayisi = 0;
+
+            document.getElementById("tahmin").value = "";
+            document.getElementById("sonuc").innerHTML = "Yeni oyun başladı!";
+            document.getElementById("hak").innerHTML = "";
+        }
+    </script>
+
+</body>
+</html>
+```

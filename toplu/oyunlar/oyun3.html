@@ -1,0 +1,183 @@
+```html
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kart Eşleştirme Oyunu</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #f1f1f1;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #oyunAlani {
+            display: grid;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 25px;
+        }
+
+        .kart {
+            width: 75px;
+            height: 75px;
+            background: #3498db;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            border-radius: 10px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .acik {
+            background: #2ecc71;
+        }
+
+        .eslesti {
+            background: #95a5a6;
+            cursor: default;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 6px;
+            background: #e67e22;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🃏 Kart Eşleştirme Oyunu</h1>
+
+    <p id="seviye">Seviye: 1</p>
+    <p id="bilgi">Aynı kartların eşini bul!</p>
+
+    <button onclick="oyunuBaslat()">Oyunu Başlat</button>
+
+    <div id="oyunAlani"></div>
+
+    <script>
+        let seviye = 1;
+        let kartlar = [];
+        let ilkKart = null;
+        let ikinciKart = null;
+        let kilitli = false;
+        let eslesenKart = 0;
+
+        const semboller = [
+            "🍎", "🍌", "🍇", "🍉", "🍓",
+            "🍒", "🥝", "🍍", "🥑", "🍊",
+            "🥕", "🌽"
+        ];
+
+        function oyunuBaslat() {
+            ilkKart = null;
+            ikinciKart = null;
+            kilitli = false;
+            eslesenKart = 0;
+
+            let kartSayisi = seviye + 2;
+
+            kartlar = semboller.slice(0, kartSayisi);
+            kartlar = [...kartlar, ...kartlar];
+
+            kartlar.sort(() => Math.random() - 0.5);
+
+            const alan = document.getElementById("oyunAlani");
+            alan.innerHTML = "";
+
+            document.getElementById("seviye").innerHTML =
+                "Seviye: " + seviye;
+
+            // Kart sayısına göre sütun sayısını ayarla
+            let sutun = kartlar.length <= 6 ? 3 :
+                        kartlar.length <= 12 ? 4 : 6;
+
+            alan.style.gridTemplateColumns =
+                `repeat(${sutun}, 75px)`;
+
+            kartlar.forEach((sembol) => {
+                const kart = document.createElement("div");
+                kart.classList.add("kart");
+                kart.innerHTML = "?";
+
+                kart.dataset.sembol = sembol;
+
+                kart.onclick = function () {
+                    kartAc(kart);
+                };
+
+                alan.appendChild(kart);
+            });
+        }
+
+        function kartAc(kart) {
+            if (
+                kilitli ||
+                kart.classList.contains("acik") ||
+                kart.classList.contains("eslesti")
+            ) {
+                return;
+            }
+
+            kart.innerHTML = kart.dataset.sembol;
+            kart.classList.add("acik");
+
+            if (!ilkKart) {
+                ilkKart = kart;
+            } else {
+                ikinciKart = kart;
+                kilitli = true;
+
+                setTimeout(karsilastir, 700);
+            }
+        }
+
+        function karsilastir() {
+            if (ilkKart.dataset.sembol === ikinciKart.dataset.sembol) {
+                ilkKart.classList.add("eslesti");
+                ikinciKart.classList.add("eslesti");
+
+                eslesenKart++;
+
+                if (eslesenKart === kartlar.length / 2) {
+                    setTimeout(() => {
+                        alert("🎉 Tebrikler! Seviye " + seviye + " tamamlandı!");
+
+                        seviye++;
+                        oyunuBaslat();
+                    }, 400);
+                }
+            } else {
+                ilkKart.innerHTML = "?";
+                ikinciKart.innerHTML = "?";
+
+                ilkKart.classList.remove("acik");
+                ikinciKart.classList.remove("acik");
+            }
+
+            ilkKart = null;
+            ikinciKart = null;
+            kilitli = false;
+        }
+
+        oyunuBaslat();
+    </script>
+
+</body>
+</html>
+```

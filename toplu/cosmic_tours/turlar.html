@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CosmicTours | Gezegen Turları</title>
+    <link rel="stylesheet" href="style.css"> <!-- Aynı CSS dosyasını bağladık! -->
+</head>
+<body>
+
+    <header>
+        <h1 id="logo">CosmicTours</h1>
+        <nav>
+            <a href="index.html">Merkez Üs</a>
+            <a href="turlar.html" class="aktif-link">Gezegen Turları</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="galeri-kapsayici">
+            
+            <!-- 1. KART -->
+            <article class="gezegen-karti" data-tur="Mars" data-ogrenci="100" data-sivil="250">
+                <img src="gorseller/mars-jpg.jpg" alt="Mars Turu">
+                <div class="kart-icerik">
+                    <h3>Kızıl Gezegen Mars</h3>
+                    <p>Olimpos Dağı'nın eteklerinde kızıl kum fırtınalarını güvenli fanus otellerimizden izleyin.</p>
+                    <p class="fiyat-listesi"><span>Öğrenci: 100₺</span><span>Sivil: 250₺</span></p>
+
+                    <div class="sefer-secimi-kutusu">
+                        <label for="mars-sefer">Sefer seçimi</label>
+                        <select class="sefer-secimi" id="mars-sefer">
+                            <option value="0" data-tarih="2026-11-12" data-saat="18:30" data-sefer="Akşam Yörüngesi" data-zam="0">12 Kasım · 18:30 · Akşam Yörüngesi · 0₺</option>
+                            <option value="1" data-tarih="2026-11-13" data-saat="20:15" data-sefer="Gece Yolculuğu" data-zam="25">13 Kasım · 20:15 · Gece Yolculuğu · +25₺</option>
+                            <option value="2" data-tarih="2026-11-14" data-saat="22:00" data-sefer="Yıldız Keşfi" data-zam="50">14 Kasım · 22:00 · Yıldız Keşfi · +50₺</option>
+                        </select>
+                    </div>
+
+                    <p class="tur-detay"><strong>Tarih:</strong> <span class="tur-detay-metin">12 Kasım 2026 · 18:30 · Akşam Yörüngesi</span></p>
+
+                    <div class="bilet-secimi">
+                        <label><input type="radio" name="tur-mars" value="ogrenci" checked> Öğrenci</label>
+                        <label><input type="radio" name="tur-mars" value="sivil"> Sivil</label>
+                    </div>
+
+                    <button type="button" class="neon-buton bilet-al-btn">Bilet Al</button>
+                </div>
+            </article>
+
+            <!-- 2. KART -->
+            <article class="gezegen-karti" data-tur="Uranüs" data-ogrenci="100" data-sivil="250">
+                <img src="gorseller/uranus-jpg.jpg" alt="Uranüs Turu">
+                <div class="kart-icerik">
+                    <h3>Buz Devi Uranüs</h3>
+                    <p>Soğuk rüzgarların ve mavi gölgelerin arasında sessiz ve hayal dolu bir yörünge yolculuğu.</p>
+                    <p class="fiyat-listesi"><span>Öğrenci: 100₺</span><span>Sivil: 250₺</span></p>
+
+                    <div class="sefer-secimi-kutusu">
+                        <label for="uranus-sefer">Sefer seçimi</label>
+                        <select class="sefer-secimi" id="uranus-sefer">
+                            <option value="0" data-tarih="2026-12-03" data-saat="21:15" data-sefer="Gece Yolculuğu" data-zam="0">03 Aralık · 21:15 · Gece Yolculuğu · 0₺</option>
+                            <option value="1" data-tarih="2026-12-04" data-saat="22:40" data-sefer="Kutup Işığı Turu" data-zam="25">04 Aralık · 22:40 · Kutup Işığı Turu · +25₺</option>
+                            <option value="2" data-tarih="2026-12-05" data-saat="23:50" data-sefer="Yıldız Gecesi" data-zam="50">05 Aralık · 23:50 · Yıldız Gecesi · +50₺</option>
+                        </select>
+                    </div>
+
+                    <p class="tur-detay"><strong>Tarih:</strong> <span class="tur-detay-metin">03 Aralık 2026 · 21:15 · Gece Yolculuğu</span></p>
+
+                    <div class="bilet-secimi">
+                        <label><input type="radio" name="tur-uranus" value="ogrenci" checked> Öğrenci</label>
+                        <label><input type="radio" name="tur-uranus" value="sivil"> Sivil</label>
+                    </div>
+
+                    <button type="button" class="neon-buton bilet-al-btn">Bilet Al</button>
+                </div>
+            </article>
+
+            <!-- 3. KART -->
+            <article class="gezegen-karti" data-tur="Satürn" data-ogrenci="100" data-sivil="250">
+                <img src="gorseller/saturn-jpg.jpg" alt="Satürn Turu">
+                <div class="kart-icerik">
+                    <h3>Halkaların Efendisi Satürn</h3>
+                    <p>Buz ve kayadan oluşan efsanevi halkaların arasında romantik bir uzay yürüyüşü.</p>
+                    <p class="fiyat-listesi"><span>Öğrenci: 100₺</span><span>Sivil: 250₺</span></p>
+
+                    <div class="sefer-secimi-kutusu">
+                        <label for="saturn-sefer">Sefer seçimi</label>
+                        <select class="sefer-secimi" id="saturn-sefer">
+                            <option value="0" data-tarih="2026-11-28" data-saat="20:00" data-sefer="Halkalar Turu" data-zam="0">28 Kasım · 20:00 · Halkalar Turu · 0₺</option>
+                            <option value="1" data-tarih="2026-11-29" data-saat="21:30" data-sefer="Gün Batımı Gezisi" data-zam="25">29 Kasım · 21:30 · Gün Batımı Gezisi · +25₺</option>
+                            <option value="2" data-tarih="2026-11-30" data-saat="23:15" data-sefer="Gece Yolculuğu" data-zam="50">30 Kasım · 23:15 · Gece Yolculuğu · +50₺</option>
+                        </select>
+                    </div>
+
+                    <p class="tur-detay"><strong>Tarih:</strong> <span class="tur-detay-metin">28 Kasım 2026 · 20:00 · Halkalar Turu</span></p>
+
+                    <div class="bilet-secimi">
+                        <label><input type="radio" name="tur-saturn" value="ogrenci" checked> Öğrenci</label>
+                        <label><input type="radio" name="tur-saturn" value="sivil"> Sivil</label>
+                    </div>
+
+                    <button type="button" class="neon-buton bilet-al-btn">Bilet Al</button>
+                </div>
+            </article>
+
+            <!-- 4. KART -->
+            <article class="gezegen-karti" data-tur="Dünya" data-ogrenci="100" data-sivil="250">
+                <img src="gorseller/earth-jpg.jpg" alt="Dünya Turu">
+                <div class="kart-icerik">
+                    <h3>Mavi Gezegen Dünya</h3>
+                    <p>Yeryüzü manzaralarını ve okyanus ışıklarını eşsiz bir uzay turuyla deneyimleyin.</p>
+                    <p class="fiyat-listesi"><span>Öğrenci: 100₺</span><span>Sivil: 250₺</span></p>
+
+                    <div class="sefer-secimi-kutusu">
+                        <label for="earth-sefer">Sefer seçimi</label>
+                        <select class="sefer-secimi" id="earth-sefer">
+                            <option value="0" data-tarih="2026-10-12" data-saat="09:30" data-sefer="Gün Doğumu Turu" data-zam="0">12 Ekim · 09:30 · Gün Doğumu Turu · 0₺</option>
+                            <option value="1" data-tarih="2026-10-13" data-saat="11:15" data-sefer="Okyanus Rotası" data-zam="25">13 Ekim · 11:15 · Okyanus Rotası · +25₺</option>
+                            <option value="2" data-tarih="2026-10-14" data-saat="13:00" data-sefer="Yıldızlı Gecelik Seyir" data-zam="50">14 Ekim · 13:00 · Yıldızlı Gecelik Seyir · +50₺</option>
+                        </select>
+                    </div>
+
+                    <p class="tur-detay"><strong>Tarih:</strong> <span class="tur-detay-metin">12 Ekim 2026 · 09:30 · Gün Doğumu Turu</span></p>
+
+                    <div class="bilet-secimi">
+                        <label><input type="radio" name="tur-earth" value="ogrenci" checked> Öğrenci</label>
+                        <label><input type="radio" name="tur-earth" value="sivil"> Sivil</label>
+                    </div>
+
+                    <button type="button" class="neon-buton bilet-al-btn">Bilet Al</button>
+                </div>
+            </article>
+
+            <!-- 5. KART -->
+            <article class="gezegen-karti" data-tur="Jüpiter" data-ogrenci="100" data-sivil="250">
+                <img src="gorseller/jupiter-jpg.jpg" alt="Jüpiter Turu">
+                <div class="kart-icerik">
+                    <h3>Devasa Jüpiter</h3>
+                    <p>Güçlü bulut şeritleri ve devasa fırtına alanları arasında büyük bir keşif turu.</p>
+                    <p class="fiyat-listesi"><span>Öğrenci: 100₺</span><span>Sivil: 250₺</span></p>
+
+                    <div class="sefer-secimi-kutusu">
+                        <label for="jupiter-sefer">Sefer seçimi</label>
+                        <select class="sefer-secimi" id="jupiter-sefer">
+                            <option value="0" data-tarih="2026-12-08" data-saat="19:45" data-sefer="Kızıl Fırtına" data-zam="0">08 Aralık · 19:45 · Kızıl Fırtına · 0₺</option>
+                            <option value="1" data-tarih="2026-12-09" data-saat="21:20" data-sefer="Bulut Şeridi Turu" data-zam="25">09 Aralık · 21:20 · Bulut Şeridi Turu · +25₺</option>
+                            <option value="2" data-tarih="2026-12-10" data-saat="23:10" data-sefer="Yıldız Üstü Gezinti" data-zam="50">10 Aralık · 23:10 · Yıldız Üstü Gezinti · +50₺</option>
+                        </select>
+                    </div>
+
+                    <p class="tur-detay"><strong>Tarih:</strong> <span class="tur-detay-metin">08 Aralık 2026 · 19:45 · Kızıl Fırtına</span></p>
+
+                    <div class="bilet-secimi">
+                        <label><input type="radio" name="tur-jupiter" value="ogrenci" checked> Öğrenci</label>
+                        <label><input type="radio" name="tur-jupiter" value="sivil"> Sivil</label>
+                    </div>
+
+                    <button type="button" class="neon-buton bilet-al-btn">Bilet Al</button>
+                </div>
+            </article>
+
+            <!-- 6. KART -->
+            <article class="gezegen-karti" data-tur="Merkür" data-ogrenci="100" data-sivil="250">
+                <img src="gorseller/mercury-jpg.jpg" alt="Merkür Turu">
+                <div class="kart-icerik">
+                    <h3>Güneşin En Yakını Merkür</h3>
+                    <p>Güneş ışığı ve kayalık yüzeyler arasında görülmesi zor bir gezegen keşfi.</p>
+                    <p class="fiyat-listesi"><span>Öğrenci: 100₺</span><span>Sivil: 250₺</span></p>
+
+                    <div class="sefer-secimi-kutusu">
+                        <label for="mercury-sefer">Sefer seçimi</label>
+                        <select class="sefer-secimi" id="mercury-sefer">
+                            <option value="0" data-tarih="2026-11-18" data-saat="07:00" data-sefer="Şafak Keşfi" data-zam="0">18 Kasım · 07:00 · Şafak Keşfi · 0₺</option>
+                            <option value="1" data-tarih="2026-11-19" data-saat="08:45" data-sefer="Güneş Yörüngesi" data-zam="25">19 Kasım · 08:45 · Güneş Yörüngesi · +25₺</option>
+                            <option value="2" data-tarih="2026-11-20" data-saat="10:30" data-sefer="Kaya Dönüşü" data-zam="50">20 Kasım · 10:30 · Kaya Dönüşü · +50₺</option>
+                        </select>
+                    </div>
+
+                    <p class="tur-detay"><strong>Tarih:</strong> <span class="tur-detay-metin">18 Kasım 2026 · 07:00 · Şafak Keşfi</span></p>
+
+                    <div class="bilet-secimi">
+                        <label><input type="radio" name="tur-mercury" value="ogrenci" checked> Öğrenci</label>
+                        <label><input type="radio" name="tur-mercury" value="sivil"> Sivil</label>
+                    </div>
+
+                    <button type="button" class="neon-buton bilet-al-btn">Bilet Al</button>
+                </div>
+            </article>
+
+            <!-- 7. KART -->
+            <article class="gezegen-karti" data-tur="Neptün" data-ogrenci="100" data-sivil="250">
+                <img src="gorseller/neptune-jpg.jpg" alt="Neptün Turu">
+                <div class="kart-icerik">
+                    <h3>Mavi Rüzgar Neptün</h3>
+                    <p>Uzaktan görülen mavi gölgesinin ardındaki derin soğuk ve rüzgarı hissedin.</p>
+                    <p class="fiyat-listesi"><span>Öğrenci: 100₺</span><span>Sivil: 250₺</span></p>
+
+                    <div class="sefer-secimi-kutusu">
+                        <label for="neptune-sefer">Sefer seçimi</label>
+                        <select class="sefer-secimi" id="neptune-sefer">
+                            <option value="0" data-tarih="2026-12-18" data-saat="22:15" data-sefer="Mavi Derinlik" data-zam="0">18 Aralık · 22:15 · Mavi Derinlik · 0₺</option>
+                            <option value="1" data-tarih="2026-12-19" data-saat="23:50" data-sefer="Buz Rüzgarı" data-zam="25">19 Aralık · 23:50 · Buz Rüzgarı · +25₺</option>
+                            <option value="2" data-tarih="2026-12-20" data-saat="00:40" data-sefer="Karanlık Vadi" data-zam="50">20 Aralık · 00:40 · Karanlık Vadi · +50₺</option>
+                        </select>
+                    </div>
+
+                    <p class="tur-detay"><strong>Tarih:</strong> <span class="tur-detay-metin">18 Aralık 2026 · 22:15 · Mavi Derinlik</span></p>
+
+                    <div class="bilet-secimi">
+                        <label><input type="radio" name="tur-neptune" value="ogrenci" checked> Öğrenci</label>
+                        <label><input type="radio" name="tur-neptune" value="sivil"> Sivil</label>
+                    </div>
+
+                    <button type="button" class="neon-buton bilet-al-btn">Bilet Al</button>
+                </div>
+            </article>
+
+            <!-- 8. KART -->
+            <article class="gezegen-karti" data-tur="Venüs" data-ogrenci="100" data-sivil="250">
+                <img src="gorseller/venus-jpg.jpg" alt="Venüs Turu">
+                <div class="kart-icerik">
+                    <h3>Parlak Venüs</h3>
+                    <p>Bulutlarla kaplı yüzeyi ve sıcak atmosferiyle en gizemli gezegenlerden biri.</p>
+                    <p class="fiyat-listesi"><span>Öğrenci: 100₺</span><span>Sivil: 250₺</span></p>
+
+                    <div class="sefer-secimi-kutusu">
+                        <label for="venus-sefer">Sefer seçimi</label>
+                        <select class="sefer-secimi" id="venus-sefer">
+                            <option value="0" data-tarih="2026-10-20" data-saat="18:10" data-sefer="Alacakaranlık Turu" data-zam="0">20 Ekim · 18:10 · Alacakaranlık Turu · 0₺</option>
+                            <option value="1" data-tarih="2026-10-21" data-saat="20:05" data-sefer="Parlak Bulutlar" data-zam="25">21 Ekim · 20:05 · Parlak Bulutlar · +25₺</option>
+                            <option value="2" data-tarih="2026-10-22" data-saat="21:40" data-sefer="Gün Batımı Yolculuğu" data-zam="50">22 Ekim · 21:40 · Gün Batımı Yolculuğu · +50₺</option>
+                        </select>
+                    </div>
+
+                    <p class="tur-detay"><strong>Tarih:</strong> <span class="tur-detay-metin">20 Ekim 2026 · 18:10 · Alacakaranlık Turu</span></p>
+
+                    <div class="bilet-secimi">
+                        <label><input type="radio" name="tur-venus" value="ogrenci" checked> Öğrenci</label>
+                        <label><input type="radio" name="tur-venus" value="sivil"> Sivil</label>
+                    </div>
+
+                    <button type="button" class="neon-buton bilet-al-btn">Bilet Al</button>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <script>
+        function seciliSeferBilgisi(kart) {
+            const secim = kart.querySelector('.sefer-secimi');
+            const secili = secim.selectedOptions[0] || secim.options[0];
+            return {
+                tarih: secili.dataset.tarih || '2026-11-01',
+                saat: secili.dataset.saat || '18:00',
+                sefer: secili.dataset.sefer || 'Standart Sefer',
+                zam: Number(secili.dataset.zam || 0)
+            };
+        }
+
+        document.querySelectorAll('.gezegen-karti').forEach((kart) => {
+            const secim = kart.querySelectorAll('input[type="radio"]');
+            const buton = kart.querySelector('.bilet-al-btn');
+            const detayMetin = kart.querySelector('.tur-detay-metin');
+            const seferSecimi = kart.querySelector('.sefer-secimi');
+
+            kart.addEventListener('click', (event) => {
+                if (event.target.closest('button')) return;
+                document.querySelectorAll('.gezegen-karti').forEach((item) => item.classList.remove('is-open'));
+                kart.classList.add('is-open');
+            });
+
+            function fiyatHesapla() {
+                const secili = kart.querySelector('input[type="radio"]:checked');
+                const tur = kart.dataset.tur;
+                const tip = secili ? secili.value : 'ogrenci';
+                const baseUcret = tip === 'sivil' ? Number(kart.dataset.sivil) : Number(kart.dataset.ogrenci);
+                const seferBilgisi = seciliSeferBilgisi(kart);
+                const ucret = baseUcret + seferBilgisi.zam;
+                const label = tip === 'sivil' ? 'Sivil' : 'Öğrenci';
+
+                detayMetin.textContent = `${seferBilgisi.tarih} · ${seferBilgisi.saat} · ${seferBilgisi.sefer}`;
+                buton.textContent = `Bilet Al • ${label} ${ucret}₺`;
+                buton.dataset.tur = tur;
+                buton.dataset.tip = tip;
+                buton.dataset.ucret = ucret;
+                buton.dataset.tarih = seferBilgisi.tarih;
+                buton.dataset.saat = seferBilgisi.saat;
+                buton.dataset.sefer = seferBilgisi.sefer;
+            }
+
+            secim.forEach((radio) => radio.addEventListener('change', fiyatHesapla));
+            seferSecimi.addEventListener('change', fiyatHesapla);
+
+            buton.addEventListener('click', () => {
+                const tur = buton.dataset.tur || kart.dataset.tur;
+                const tip = buton.dataset.tip || 'ogrenci';
+                const ucret = buton.dataset.ucret || kart.dataset.ogrenci;
+                const tarih = buton.dataset.tarih || '2026-11-01';
+                const saat = buton.dataset.saat || '18:00';
+                const sefer = buton.dataset.sefer || 'Standart Sefer';
+                const url = `bilet.html?tur=${encodeURIComponent(tur)}&tip=${encodeURIComponent(tip)}&ucret=${encodeURIComponent(ucret)}&tarih=${encodeURIComponent(tarih)}&saat=${encodeURIComponent(saat)}&sefer=${encodeURIComponent(sefer)}`;
+                window.open(url, '_blank', 'noopener,noreferrer');
+            });
+
+            fiyatHesapla();
+        });
+    </script>
+
+    <footer>
+        <p>&copy; 2024 CosmicTours A.Ş. Tüm Galaktik Hakları Saklıdır.</p>
+    </footer>
+
+</body>
+</html>

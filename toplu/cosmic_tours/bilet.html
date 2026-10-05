@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CosmicTours | Bilet Özeti</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            background:
+                linear-gradient(rgba(4, 8, 20, 0.8), rgba(4, 8, 20, 0.9)),
+                url('gorseller/saman_yolu_galaksisi.jpg') center / cover no-repeat fixed;
+        }
+
+        .bilet-kutusu {
+            width: min(680px, 100%);
+            background: rgba(12, 18, 30, 0.88);
+            border: 1px solid rgba(148, 163, 184, 0.28);
+            border-radius: 18px;
+            padding: 30px;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .bilet-kutusu h2 {
+            color: #8ae9ff;
+            margin-bottom: 20px;
+            text-align: center;
+            letter-spacing: 0.06em;
+        }
+
+        .bilet-ozet {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(148, 163, 184, 0.18);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .bilet-ozet p {
+            margin: 10px 0;
+            font-size: 1.05rem;
+            color: #dfe7ee;
+        }
+
+        .bilet-ozet strong {
+            color: #f3f7fb;
+        }
+
+        .bilet-fiyat {
+            font-size: 1.8rem;
+            color: #8ae9ff;
+            font-weight: bold;
+            margin-top: 18px;
+            text-align: center;
+            letter-spacing: 0.04em;
+        }
+
+        .dokuman-alani {
+            margin-top: 22px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(148, 163, 184, 0.18);
+            display: none;
+        }
+
+        .dokuman-alani.gorunur {
+            display: block;
+        }
+
+        .dokuman-alani label {
+            display: block;
+            margin-bottom: 10px;
+            color: #dfe7ee;
+            font-weight: 600;
+        }
+
+        .dokuman-alani input[type="file"] {
+            width: 100%;
+            padding: 12px 14px;
+            border-radius: 10px;
+            border: 1px solid rgba(138, 233, 255, 0.35);
+            background: rgba(255, 255, 255, 0.02);
+            color: #dfe7ee;
+        }
+
+        .onay-butonu {
+            display: inline-block;
+            background: transparent;
+            color: #8ae9ff;
+            border: 1px solid rgba(138, 233, 255, 0.7);
+            border-radius: 10px;
+            padding: 12px 24px;
+            margin-top: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .onay-butonu:hover {
+            background: rgba(138, 233, 255, 0.12);
+            box-shadow: 0 0 12px rgba(138, 233, 255, 0.2);
+        }
+
+        .geri-link {
+            display: inline-block;
+            margin-top: 22px;
+            color: #8ae9ff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="bilet-kutusu">
+        <h2>Bilet Özeti</h2>
+
+        <div class="bilet-ozet">
+            <p><strong>Tur:</strong> <span id="tur-adi">-</span></p>
+            <p><strong>Bilet Türü:</strong> <span id="bilet-turu">-</span></p>
+            <p><strong>Tarih:</strong> <span id="tarih">-</span></p>
+            <p><strong>Saat:</strong> <span id="saat">-</span></p>
+            <p><strong>Sefer:</strong> <span id="sefer">-</span></p>
+        </div>
+
+        <div class="bilet-fiyat" id="fiyat">0₺</div>
+
+        <div class="dokuman-alani" id="dokuman-alani">
+            <label for="ogrenci-belgesi">Öğrenci belgesi / e-Okul dosyasını yükleyin</label>
+            <input id="ogrenci-belgesi" type="file" accept="image/*,.pdf" required>
+            <button type="button" class="onay-butonu">Bileti Onayla</button>
+        </div>
+
+        <a href="turlar.html" class="geri-link">← Turlara Dön</a>
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const tur = params.get('tur') || 'Tur';
+        const tip = params.get('tip') || 'ogrenci';
+        const ucret = params.get('ucret') || '100';
+        const tarih = params.get('tarih') || '2026-11-01';
+        const saat = params.get('saat') || '18:00';
+        const sefer = params.get('sefer') || 'Standart Sefer';
+
+        const fiyatText = document.getElementById('fiyat');
+        const turAdi = document.getElementById('tur-adi');
+        const biletTuru = document.getElementById('bilet-turu');
+        const tarihEl = document.getElementById('tarih');
+        const saatEl = document.getElementById('saat');
+        const seferEl = document.getElementById('sefer');
+        const dokumanAlani = document.getElementById('dokuman-alani');
+
+        turAdi.textContent = tur;
+        biletTuru.textContent = tip === 'sivil' ? 'Sivil' : 'Öğrenci';
+        tarihEl.textContent = tarih;
+        saatEl.textContent = saat;
+        seferEl.textContent = sefer;
+        fiyatText.textContent = `${ucret}₺`;
+
+        if (tip === 'ogrenci') {
+            dokumanAlani.classList.add('gorunur');
+        }
+    </script>
+</body>
+</html>

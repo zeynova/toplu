@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CosmicTours | Uzay Seni Çağırıyor</title>
+    
+    <!-- CSS EKLEME YÖNTEMİ 1: SAYFA DIŞI (EXTERNAL) CSS -->
+    <!-- En profesyonel yöntemdir. Tüm sayfalar bu dosyadan beslenir. -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- CSS EKLEME YÖNTEMİ 2: SAYFA İÇİ (INTERNAL) CSS -->
+    <!-- Sadece bu sayfaya (index.html) özel bir ayar yapmak istersek kullanırız. -->
+    <style>
+        .ana-sayfa-ozel { border-bottom: 3px dashed #f39c12; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 id="logo">CosmicTours</h1>
+        <nav>
+            <a href="index.html" class="aktif-link">Merkez Üs</a>
+            <a href="turlar.html">Gezegen Turları</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="karsilama-alani">
+            <h2 class="ana-sayfa-ozel">Sıradaki Tatiliniz Dünya Dışında!</h2>
+            
+            <p class="hikaye-metni">İnsanlık sınırları aştı. Artık Ay'da yürümek sıradan bir hafta sonu aktivitesi. CosmicTours ile Güneş sisteminin en egzotik köşelerine lüks kruvaziyer gemilerimizle seyahat edin.</p>
+            
+            <p class="uyari-metin">DİKKAT: Venüs turlarımız aşırı sıcaklık sebebiyle geçici olarak durdurulmuştur.</p>
+
+            <div class="hero-actions">
+                <a href="turlar.html" class="neon-buton" target="_blank" rel="noopener noreferrer">Turları Keşfet</a>
+                <a href="sms:+905551234567?body=Merhaba%20CosmicTours%2C%20bana%20detay%20g%C3%B6nderebilir%20misiniz%3F" class="secondary-button">Bilgi Mesajı Gönder</a>
+                <a href="#iade-politikasi" class="secondary-button">İade Koşulları</a>
+            </div>
+        </section>
+
+        <section class="yorumlar-bolumu">
+            <div class="section-baslik-wrap">
+                <p class="mini-baslik">Müşteri Yorumları</p>
+                <h3>Gezegen yolculuklarımızdan etkilenenler</h3>
+            </div>
+
+            <div class="yorum-kartlari">
+                <article class="yorum-karti">
+                    <div class="yorum-yildiz">★★★★★</div>
+                    <p>“Mars turu gerçekten görsel olarak çok etkileyiciydi. Öğrenci fiyatı da çok uygundu, hemen rezervasyon yaptık.”</p>
+                    <strong>Elif K.</strong>
+                    <span>Mars Turu</span>
+                </article>
+
+                <article class="yorum-karti">
+                    <div class="yorum-yildiz">★★★★★</div>
+                    <p>“Satürn’ün halkalarını görebilmek için bu turu seçtik. Ekip çok profesyoneldi ve her şey çok düzenliydi.”</p>
+                    <strong>Kerem T.</strong>
+                    <span>Satürn Turu</span>
+                </article>
+
+                <article class="yorum-karti">
+                    <div class="yorum-yildiz">★★★★★</div>
+                    <p>“Uranüs turu benim için en çok tercih edilenlerden oldu. Sessiz ve büyüleyici bir deneyimdi, neden gittiğimi tam anlattı.”</p>
+                    <strong>Zeynep A.</strong>
+                    <span>Uranüs Turu</span>
+                </article>
+            </div>
+        </section>
+
+        <section class="populer-gezenler-bolumu">
+            <div class="section-baslik-wrap">
+                <p class="mini-baslik">En Çok Tercih Edilenler</p>
+                <h3>Misafirlerimizin en çok gittiği gezegenler</h3>
+            </div>
+
+            <div class="populer-gezenler-grid">
+                <article class="populer-gezen">
+                    <span class="gezen-badge">%45</span>
+                    <h4>Mars</h4>
+                    <p>En çok tercih edilen gezegenlerden biri. Kızıl yüzey, heyecanlı keşif atmosferi ve kısa yolculuk süresi nedeniyle tercih ediliyor.</p>
+                </article>
+
+                <article class="populer-gezen">
+                    <span class="gezen-badge">%32</span>
+                    <h4>Satürn</h4>
+                    <p>Halkaların güzelliği ve eşsiz manzarası sebebiyle tercih ediliyor. Özellikle fotoğraf ve manzara tutkunları burayı seçiyor.</p>
+                </article>
+
+                <article class="populer-gezen">
+                    <span class="gezen-badge">%23</span>
+                    <h4>Uranüs</h4>
+                    <p>Soğuk ama büyüleyici görünümü ve gece yolculuğu deneyimi, gezegeni özel kılan en önemli nedenlerden biri.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="iade-politikasi" class="iade-politikasi">
+            <div class="section-baslik-wrap">
+                <p class="mini-baslik">Yolculuk Güvencesi</p>
+                <h3>İade ve değiştirme koşulları</h3>
+            </div>
+
+            <p>Rezervasyonunuzdan 48 saat önce iptal ederseniz %100 iade hakkı tanınır. 48 saat içinde yapılan değişiklikler için uygun sefer farkı uygulanır. Sorularınız için telefon veya SMS ile bizimle iletişime geçebilirsiniz.</p>
+
+            <div class="iletisim-actions">
+                <a href="tel:+905551234567" class="secondary-button">Telefonla Bilgi Al</a>
+                <a href="sms:+905551234567?body=Merhaba%20CosmicTours%2C%20iade%20ko%C5%9Fullar%C4%B1%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." class="secondary-button">SMS ile Bilgi Al</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 CosmicTours A.Ş. Tüm Galaktik Hakları Saklıdır.</p>
+    </footer>
+
+</body>
+</html>
